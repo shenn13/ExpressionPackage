@@ -1,0 +1,85 @@
+//
+//  PrefixHeader.pch
+//  ExpressionPackage-Demo
+//
+//  Created by shen on 17/3/20.
+//  Copyright © 2017年 shen. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...)
+#endif
+
+//屏幕的宽和高
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+//以iPhone 5的屏幕为基准
+#define W(x) kScreenWidth*(x)/320.0
+#define H(y) kScreenHeight*(y)/568.0
+
+#define kMainScreenColor [UIColor colorWithRed:0.0/255 green:197.0/255 blue:11.0/255 alpha:1]
+#define kLineColor [UIColor colorWithRed:240.0/255 green:240.0/255 blue:246.0/255 alpha:1]
+
+//第三方
+#import "Masonry.h"
+#import "AFNetworking.h"
+#import "SVProgressHUD.h"
+#import "UIImageView+WebCache.h"
+#import "MJRefresh.h"
+#import "JSONModel.h"
+#import "FMDatabase.h"
+
+
+
+#import "AFNetworkingManager.h"
+#import "UIImage+Extension.h"
+#import "UIView+MJ.h"
+#import "UIImageView+ATGetColor.h"
+#import "EPProgressShow.h"
+
+
+/*******************
+      今日推荐
+******************* */
+#define shareItemNewListURL @"http://api.jiefu.tv/app2/api/dt/shareItem/newList.html?pageNum="
+/*******************
+      热门更新
+ ******************* */
+#define hotListURL @"http://api.jiefu.tv/app2/api/dt/item/hotList.html?pageNum="
+/*******************
+      最新表情
+ ******************* */
+#define newListURL @"http://api.jiefu.tv/app2/api/dt/item/newList.html?pageNum="
+/*******************
+      分类列表
+ ******************* */
+#define allListURL @"http://api.jiefu.tv/app2/api/dt/tag/allList.html"
+/*******************
+     分类详情
+ ******************* */
+#define getByTagURL @"http://api.jiefu.tv/app2/api/dt/item/getByTag.html?tagId="
+/*******************
+    搜索列表
+ ******************* */
+#define searchURL @"http://api.jiefu.tv/app2/api/dt/shareItem/search.html?keyWord="
+/*******************
+     DIY详情
+ ******************* */
+#define getDetailURL @"http://api.jiefu.tv/app2/api/dt/item/getDetail.html?itemId="
+
+/*******************
+    APP评分跳转链接
+ ******************* */
+#define APPCommentURL @"itms-apps://itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&id=1196204999&pageNumber=0&sortOrdering=2&mt=8"
+
+
+#endif /* PrefixHeader_pch */
